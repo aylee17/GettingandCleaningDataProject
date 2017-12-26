@@ -1,7 +1,7 @@
 library(reshape2)
 
 # Download file
-if(!file.exists("UCI HAR Dataset") {
+if(!file.exists("UCI HAR Dataset")) {
         fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
         download.file(fileUrl, "Dataset.zip")
 }
@@ -42,6 +42,7 @@ mean_std <- all_merge[ , grepl("activity|subject|*mean*|*std*", colnames(all_mer
 
 # Use descriptive activity names
 desc_names <- merge(activity, mean_std, by = "activity", all = TRUE)
+desc_names$activity <- NULL
 
 # Create second independent tidy data set with average of each variable for each activity and subject
 melted_data <- melt(desc_names, id=c("subject", "activityDescription"))

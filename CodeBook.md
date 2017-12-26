@@ -2,7 +2,6 @@
 
 ## Identifiers
 `subject` - ID of subject  
-`activity` - ID of activity  
 `activityDescription` - Description of activity performed  
 * `WALKING` - subject was walking 
 * `WALKING_UPSTAIRS` - subject was walking up the stairs
